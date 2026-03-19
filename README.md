@@ -1,4 +1,4 @@
-Code for the Efficient Image Super-Resolution Reconstruction Network Based on Feature Modulation and Variance Attention (FMVAN)
+Code for the Efficient Image Super-Resolution Reconstruction Network Based on Feature Modulation and Variance Attention
 This code is built based on BasicSR. Before conducting training and testing operations, please ensure that the installation of the work and the preparation of the dataset have been completed correctly.
 To keep the working environment tidy and simple, only three files, namely test.py, train.py and your_arch.py, are required here.
 
