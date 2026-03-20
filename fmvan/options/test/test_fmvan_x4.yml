@@ -1,0 +1,53 @@
+# general settings
+name: test_fmvan_x4
+model_type: SRModel
+scale: 4
+num_gpu: 1
+manual_seed: 10
+
+datasets:
+  test_1:
+    name: Set5
+    type: PairedImageDataset
+    dataroot_gt: datasets/Set5/set5_hr/
+    dataroot_lq: datasets/Set5/LRbicx4/
+    io_backend:
+      type: disk
+
+  test_2:
+    name: Set14
+    type: PairedImageDataset
+    dataroot_gt: datasets/Set14/set14_hr/
+    dataroot_lq: datasets/Set14/LRbicx4/
+    io_backend:
+      type: disk
+
+
+network_g:
+  type: SRnet
+  num_feat: 56
+  num_block: 10
+  upscale: 4
+
+
+path:
+  pretrain_network_g: ~
+  strict_load_g: true
+  resume_state: ~
+  param_key_g: 'params_ema'
+
+val:
+  save_img: false
+  suffix: ~
+
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 4
+      test_y_channel: true
+      better: higher
+    ssim:
+      type: calculate_ssim
+      crop_border: 4
+      test_y_channel: true
+      better: higher
