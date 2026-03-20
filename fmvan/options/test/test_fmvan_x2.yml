@@ -1,1 +1,78 @@
+# general settings
+name: test_FMVAN_x2
+model_type: SRModel
+scale: 2
+num_gpu: 1
+manual_seed: 10
+
+datasets:
+  test_1:
+    name: Set5
+    type: PairedImageDataset
+    dataroot_gt: datasets/Set5/set5_hr/
+    dataroot_lq: datasets/Set5/LRbicx2/
+    io_backend:
+      type: disk
+
+  test_2:
+    name: Set14
+    type: PairedImageDataset
+    dataroot_gt: datasets/Set14/set14_hr/
+    dataroot_lq: datasets/Set14/LRbicx2/
+    io_backend:
+      type: disk
+
+  test_3:
+    name: BSD100
+    type: PairedImageDataset
+    dataroot_gt: datasets/BS100/BSDS100_hr/
+    dataroot_lq: datasets/BS100/BSDS100_lrbicx2/
+    io_backend:
+      type: disk
+
+  test_4:
+    name: Urban100
+    type: PairedImageDataset
+    dataroot_gt: datasets/Ur100/urban100_hr/
+    dataroot_lq: datasets/Ur100/urban100_lrbicx2/
+    io_backend:
+      type: disk
+
+  test_5:
+    name: Manga109
+    type: PairedImageDataset
+    dataroot_gt: datasets/ma109/manga109_hr/
+    dataroot_lq: datasets/ma109/manga109_lrbicx2/
+    io_backend:
+      type: disk
+
+
+network_g:
+  type: SRnet
+  num_feat: 56
+  num_block: 10
+  upscale: 2
+
+
+path:
+  pretrain_network_g: ~
+  strict_load_g: true
+  resume_state: ~
+  param_key_g: 'params_ema'
+
+val:
+  save_img: false
+  suffix: ~
+
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 2
+      test_y_channel: true
+      better: higher
+    ssim:
+      type: calculate_ssim
+      crop_border: 2
+      test_y_channel: true
+      better: higher
 
