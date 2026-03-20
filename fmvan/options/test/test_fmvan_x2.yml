@@ -1,5 +1,5 @@
 # general settings
-name: test_FMVAN_x2
+name: test_fmvan_x2
 model_type: SRModel
 scale: 2
 num_gpu: 1
@@ -19,30 +19,6 @@ datasets:
     type: PairedImageDataset
     dataroot_gt: datasets/Set14/set14_hr/
     dataroot_lq: datasets/Set14/LRbicx2/
-    io_backend:
-      type: disk
-
-  test_3:
-    name: BSD100
-    type: PairedImageDataset
-    dataroot_gt: datasets/BS100/BSDS100_hr/
-    dataroot_lq: datasets/BS100/BSDS100_lrbicx2/
-    io_backend:
-      type: disk
-
-  test_4:
-    name: Urban100
-    type: PairedImageDataset
-    dataroot_gt: datasets/Ur100/urban100_hr/
-    dataroot_lq: datasets/Ur100/urban100_lrbicx2/
-    io_backend:
-      type: disk
-
-  test_5:
-    name: Manga109
-    type: PairedImageDataset
-    dataroot_gt: datasets/ma109/manga109_hr/
-    dataroot_lq: datasets/ma109/manga109_lrbicx2/
     io_backend:
       type: disk
 
