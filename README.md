@@ -36,10 +36,10 @@ For training:
 
 you can run the testing demo with
 
-CUDA_VISIBLE_DEVICES=0 python code/train.py -opt options/train/FMVAN_X2.yml
+CUDA_VISIBLE_DEVICES=0 python code/train.py -opt options/train/train_fmvan_X2.yml
 
 For testing:
 
 you can run the testing demo with
 
-CUDA_VISIBLE_DEVICES=0 python code/test.py -opt options/test/FMVAN_X2.yml
+CUDA_VISIBLE_DEVICES=0 python code/test.py -opt options/test/test_fmvan_X2.yml
